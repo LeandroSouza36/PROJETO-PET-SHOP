@@ -40,12 +40,61 @@
           <button type="button" class="btn btn-primary btn-lg" onclick="gestaoDeServicos()">Gestão de Serviços</button>
         </div>
         <div class="col-md-2">
-          <button type="button" class="btn btn-primary btn-lg">Agendamento</button>
+          <button type="button" class="btn btn-primary btn-lg" onclick="agendamento()">Agendamento</button>
         </div>
       </div>
     </div>
-    
-<div>
+  
+ <div class="containerForm">
+  <div class="container formularioAgendamento"style="display:none">
+    <form action="index.html" method="POST">
+        <!-- Cabeçalho -->
+        <div class="container border">
+            <div class="row tituloFormulario">Agendamento</div>
+
+            <!-- Data do Serviço -->
+            <div class="row mt-3">
+                <div class="col-md-2">
+                    <label for="data" class="input-group-text">Data:</label>
+                </div>
+                <div class="col-md-6">
+                    <input style="width: 400px" type="date" id="data" class="form-control" name="data" required />
+                </div>
+            </div>
+
+            <!-- Horário do Serviço -->
+            <div class="row mt-3">
+                <div class="col-md-2">
+                    <label for="horario" class="input-group-text">Horário:</label>
+                </div>
+                <div class="col-md-6">
+                    <input style="width: 400px" type="time" id="horario" class="form-control" name="horario" required />
+                </div>
+            </div>
+
+            <!-- Observações -->
+            <div class="row mt-3">
+                <div class="col-md-2">
+                    <label for="observacoes" class="input-group-text">Observações:</label>
+                </div>
+                <div class="col-md-6">
+                    <textarea style="width: 400px" id="observacoes" class="form-control" placeholder="Adicione observações sobre o agendamento" name="observacoes" rows="3"></textarea>
+                </div>
+            </div>
+
+            <!-- Botão de Envio -->
+            <div class="row mt-4">
+                <div class="col-md-6 offset-md-2">
+                    <button type="submit" class="btn btn-primary" style="width: 400px">Confirmar Agendamento</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+ </div>   
+
+
+<div class="containerForm">
   <div class="container formularioGestaoServicos" style="display:none">
     <form action="index.html" method="POST">
         <!-- Cabeçalho -->
@@ -127,7 +176,7 @@
 </div>
 
 
-<div>
+<div class="containerForm">
   <div class="container formularioCadastroPets" style="display:none">
     <form action="index.html" method="POST">
       <!-- Cabeçalho -->
@@ -242,7 +291,7 @@
   
 
  
-<div>
+<div class="containerForm">
 
   <div class="container formularioCadastroClientes" style="display:none">
     <form action="index.html" method="POST">

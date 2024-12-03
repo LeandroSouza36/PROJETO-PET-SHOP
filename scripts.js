@@ -37,28 +37,78 @@ function cadastroClientes() {
   var formCliente = document.querySelector(".formularioCadastroClientes");
   var formPets = document.querySelector(".formularioCadastroPets");
   var formGestaoServicos = document.querySelector(".formularioGestaoServicos");
+  var formularioAgendamento = document.querySelector(".formularioAgendamento");
 
   formCliente.style.display = "block";
   formPets.style.display = "none";
   formGestaoServicos.style.display = "none";
+  formularioAgendamento.style.display = "none";
 }
 
 function cadastroPets() {
   var formCliente = document.querySelector(".formularioCadastroClientes");
   var formPets = document.querySelector(".formularioCadastroPets");
   var formGestaoServicos = document.querySelector(".formularioGestaoServicos");
+  var formularioAgendamento = document.querySelector(".formularioAgendamento");
 
   formCliente.style.display = "none";
   formPets.style.display = "block";
   formGestaoServicos.style.display = "none";
+  formularioAgendamento.style.display = "none";
 }
 
 function gestaoDeServicos() {
   var formCliente = document.querySelector(".formularioCadastroClientes");
   var formPets = document.querySelector(".formularioCadastroPets");
   var formGestaoServicos = document.querySelector(".formularioGestaoServicos");
+  var formularioAgendamento = document.querySelector(".formularioAgendamento");
 
   formCliente.style.display = "none";
   formPets.style.display = "none";
   formGestaoServicos.style.display = "block";
+  formularioAgendamento.style.display = "none";
 }
+
+function agendamento() {
+  var formCliente = document.querySelector(".formularioCadastroClientes");
+  var formPets = document.querySelector(".formularioCadastroPets");
+  var formGestaoServicos = document.querySelector(".formularioGestaoServicos");
+  var formularioAgendamento = document.querySelector(".formularioAgendamento");
+
+  formCliente.style.display = "none";
+  formPets.style.display = "none";
+  formGestaoServicos.style.display = "none";
+  formularioAgendamento.style.display = "block";
+}
+
+function mensagemEnvio() {
+  document
+    .querySelector(".formularioAgendamento")
+    .addEventListener("submit", function (event) {
+      // Exibe o alerta
+      alert("Enviado com sucesso!");
+    });
+
+  document
+    .querySelector(".formularioCadastroClientes")
+    .addEventListener("submit", function (event) {
+      // Exibe o alerta
+      alert("Enviado com sucesso!");
+    });
+
+  document
+    .querySelector(".formularioCadastroPets")
+    .addEventListener("submit", function (event) {
+      // Exibe o alerta
+      alert("Enviado com sucesso!");
+    });
+
+  document
+    .querySelector(".formularioGestaoServicos")
+    .addEventListener("submit", function (event) {
+      // Exibe o alerta
+      alert("Enviado com sucesso!");
+    });
+}
+
+mensagemEnvio();
