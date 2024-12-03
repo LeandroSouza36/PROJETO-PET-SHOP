@@ -7,9 +7,18 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
+.formularioGestaoServicos {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centraliza no meio */
+  background-color: #cfe2ff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
 .formularioCadastroPets {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%); /* Centraliza no meio */
   background-color: #cfe2ff;

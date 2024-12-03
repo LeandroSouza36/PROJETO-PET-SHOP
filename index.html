@@ -37,7 +37,7 @@
           <button type="button" class="btn btn-primary btn-lg" onclick="cadastroPets()">Cadastro de Pets</button>
         </div>
         <div class="col-md-2">
-          <button type="button" class="btn btn-primary btn-lg">Gestão de Serviços</button>
+          <button type="button" class="btn btn-primary btn-lg" onclick="gestaoDeServicos()">Gestão de Serviços</button>
         </div>
         <div class="col-md-2">
           <button type="button" class="btn btn-primary btn-lg">Agendamento</button>
@@ -46,85 +46,189 @@
     </div>
     
 <div>
+  <div class="container formularioGestaoServicos" style="display:none">
+    <form action="index.html" method="POST">
+        <!-- Cabeçalho -->
+        <div class="container border">
+            <div class="row tituloFormulario">Gestão de Serviços</div>
+
+            <!-- Nome do Cliente -->
+            <div class="row mt-3">
+                <div class="col-md-2">
+                    <label for="cliente" class="input-group-text">Nome do Cliente:</label>
+                </div>
+                <div class="col-md-6">
+                    <input style="width: 400px" type="text" id="cliente" class="form-control" placeholder="Digite o nome do cliente" name="cliente" required />
+                </div>
+            </div>
+
+            <!-- Nome do Pet -->
+            <div class="row mt-3">
+                <div class="col-md-2">
+                    <label for="nomePet" class="input-group-text">Nome do Pet:</label>
+                </div>
+                <div class="col-md-6">
+                    <input style="width: 400px" type="text" id="nomePet" class="form-control" placeholder="Digite o nome do pet" name="nomePet" required />
+                </div>
+            </div>
+
+            <!-- Tipo de Serviço -->
+            <div class="row mt-3">
+                <div class="col-md-2">
+                    <label for="servico" class="input-group-text">Tipo de Serviço:</label>
+                </div>
+                <div class="col-md-6">
+                    <select style="width: 400px" id="servico" class="form-control" name="servico" required>
+                        <option value="" disabled selected>Selecione o tipo de serviço</option>
+                        <option value="Banho">Banho</option>
+                        <option value="Tosa">Tosa</option>
+                        <option value="Consulta Veterinária">Consulta Veterinária</option>
+                        <option value="Vacinação">Vacinação</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Data do Serviço -->
+            <div class="row mt-3">
+                <div class="col-md-2">
+                    <label for="data" class="input-group-text">Data do Serviço:</label>
+                </div>
+                <div class="col-md-6">
+                    <input style="width: 400px" type="date" id="data" class="form-control" name="data" required />
+                </div>
+            </div>
+
+            <!-- Observações -->
+            <div class="row mt-3">
+                <div class="col-md-2">
+                    <label for="observacoes" class="input-group-text">Observações:</label>
+                </div>
+                <div class="col-md-6">
+                    <textarea style="width: 400px" id="observacoes" class="form-control" placeholder="Digite observações sobre o serviço" name="observacoes" rows="3"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botão de envio -->
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-8 text-center">
+                    <button type="submit" class="btn btn-primary">Salvar Serviço</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+ 
+<div>
+
+</div>
+
+
+<div>
   <div class="container formularioCadastroPets" style="display:none">
     <form action="index.html" method="POST">
-      <!-- Nome -->
-      <div class="container border ">
+      <!-- Cabeçalho -->
+      <div class="container border">
         <div class="row tituloFormulario">Cadastro de Pets</div>
+        
+        <!-- Nome -->
         <div class="row">
           <div class="col-md-2">
-            <div class="input-group-text" id="addon-wrapping"><div class="inputTexto">Nome do Pet:</div></div>
+            <label for="nome" class="input-group-text">Nome do Pet:</label>
           </div>
           <div class="col-md-6">
-            <div class="input-group flex-nowrap">
-              <input
-                style="width: 400px"
-                type="text"
-                class="form-control"
-                placeholder="Digite o nome"
-                aria-label="Nome"
-                aria-describedby="addon-wrapping"
-                name="nome"
-                required
-              />
-            </div>
+            <input
+              style="width: 400px"
+              type="text"
+              id="nome"
+              class="form-control"
+              placeholder="Digite o nome"
+              name="nome"
+              required
+            />
           </div>
         </div>
-      </div>
-
-      <!-- Contato -->
-      <div class="container">
-        <div class="row">
+  
+        <!-- Espécie -->
+        <div class="row mt-3">
           <div class="col-md-2">
-            <span class="input-group-text" id="addon-wrapping">Contato:</span>
+            <label for="especie" class="input-group-text">Espécie:</label>
           </div>
           <div class="col-md-6">
-            <div class="input-group flex-nowrap">
-              <input
-                style="width: 400px"
-                type="text"
-                class="form-control"
-                placeholder="(xx) xxxxx-xxxx"
-                aria-label="Contato"
-                aria-describedby="addon-wrapping"
-                name="contato"
-                required
-                pattern="\(\d{2}\) \d{5}-\d{4}"
-                title="Formato esperado: (xx) xxxxx-xxxx"
-                maxlength="15"
-                onkeypress="return permitirSomenteNumeros(event)"
-                oninput="mascararContato(this)"
-              />
-          </div>
-        </div>
-      </div>
-
-      <!-- Endereço -->
-      <div class="container">
-        <div class="row">
-          <div class="col-md-2">
-            <span class="input-group-text" id="addon-wrapping"
-              >Endereço:</span
+            <select
+              style="width: 400px"
+              id="especie"
+              class="form-control"
+              name="especie"
+              required
             >
+              <option value="" disabled selected>Selecione a espécie</option>
+              <option value="Cachorro">Cachorro</option>
+              <option value="Gato">Gato</option>
+              <option value="Pássaro">Pássaro</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </div>
+        </div>
+  
+        <!-- Raça -->
+        <div class="row mt-3">
+          <div class="col-md-2">
+            <label for="raca" class="input-group-text">Raça:</label>
           </div>
           <div class="col-md-6">
-            <div class="input-group flex-nowrap">
-              <input
-                style="width: 400px"
-                type="text"
-                class="form-control"
-                placeholder="Digite seu endereço"
-                aria-label="Endereço"
-                aria-describedby="addon-wrapping"
-                name="endereco"
-                required
-              />
-            </div>
+            <input
+              style="width: 400px"
+              type="text"
+              id="raca"
+              class="form-control"
+              placeholder="Digite a raça"
+              name="raca"
+              required
+            />
+          </div>
+        </div>
+  
+        <!-- Idade -->
+        <div class="row mt-3">
+          <div class="col-md-2">
+            <label for="idade" class="input-group-text">Idade:</label>
+          </div>
+          <div class="col-md-6">
+            <input
+              style="width: 400px"
+              type="number"
+              id="idade"
+              class="form-control"
+              placeholder="Digite a idade (em anos)"
+              name="idade"
+              min="0"
+              required
+            />
+          </div>
+        </div>
+  
+        <!-- Observações -->
+        <div class="row mt-3">
+          <div class="col-md-2">
+            <label for="observacoes" class="input-group-text">Observações:</label>
+          </div>
+          <div class="col-md-6">
+            <textarea
+              style="width: 400px"
+              id="observacoes"
+              class="form-control"
+              placeholder="Digite observações específicas sobre o pet"
+              name="observacoes"
+              rows="3"
+            ></textarea>
           </div>
         </div>
       </div>
-
-
+  
       <!-- Botão de envio -->
       <div class="container mt-3">
         <div class="row">
@@ -135,8 +239,7 @@
       </div>
     </form>
   </div>
-
-</div>
+  
 
  
 <div>

@@ -36,15 +36,29 @@ function mascararContato(input) {
 function cadastroClientes() {
   var formCliente = document.querySelector(".formularioCadastroClientes");
   var formPets = document.querySelector(".formularioCadastroPets");
+  var formGestaoServicos = document.querySelector(".formularioGestaoServicos");
 
   formCliente.style.display = "block";
   formPets.style.display = "none";
+  formGestaoServicos.style.display = "none";
 }
 
 function cadastroPets() {
   var formCliente = document.querySelector(".formularioCadastroClientes");
   var formPets = document.querySelector(".formularioCadastroPets");
+  var formGestaoServicos = document.querySelector(".formularioGestaoServicos");
 
   formCliente.style.display = "none";
   formPets.style.display = "block";
+  formGestaoServicos.style.display = "none";
+}
+
+function gestaoDeServicos() {
+  var formCliente = document.querySelector(".formularioCadastroClientes");
+  var formPets = document.querySelector(".formularioCadastroPets");
+  var formGestaoServicos = document.querySelector(".formularioGestaoServicos");
+
+  formCliente.style.display = "none";
+  formPets.style.display = "none";
+  formGestaoServicos.style.display = "block";
 }
